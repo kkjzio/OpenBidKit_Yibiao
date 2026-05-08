@@ -47,6 +47,12 @@
           ]
         },
         {
+          "target": "msi",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
           "target": "zip",
           "arch": [
             "x64"
@@ -58,6 +64,12 @@
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
       "perMachine": false
+    },
+    "msi": {
+      "oneClick": false,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
     },
     "mac": {
       "icon": "assets/icon.icns",
