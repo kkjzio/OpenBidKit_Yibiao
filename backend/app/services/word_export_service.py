@@ -83,13 +83,6 @@ class WordExportService:
         _set_run_font_simsun(title_run)
         title_paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
-        if project_overview:
-            heading = doc.add_heading("项目概述", level=1)
-            heading.alignment = WD_ALIGN_PARAGRAPH.LEFT
-            _set_paragraph_font_simsun(heading)
-            overview_paragraph = doc.add_paragraph(project_overview)
-            _set_paragraph_font_simsun(overview_paragraph)
-            overview_paragraph.paragraph_format.space_after = Pt(12)
 
     @staticmethod
     def _add_markdown_runs(para: docx.text.paragraph.Paragraph, text: str) -> None:
