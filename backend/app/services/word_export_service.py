@@ -31,9 +31,7 @@ class WordExportService:
     def export_outline(request: WordExportRequest) -> tuple[io.BytesIO, dict[str, str]]:
         doc = docx.Document()
         WordExportService._init_document_styles(doc)
-        WordExportService._add_document_intro(
-            doc, request.project_name, request.project_overview
-        )
+        WordExportService._add_document_intro(doc, request.project_name)
         WordExportService._add_outline_items(doc, request.outline)
 
         buffer = io.BytesIO()
@@ -67,7 +65,7 @@ class WordExportService:
 
     @staticmethod
     def _add_document_intro(
-        doc: docx.Document, project_name: str | None, project_overview: str | None
+        doc: docx.Document, project_name: str | None
     ) -> None:
         declaration = doc.add_paragraph()
         declaration_run = declaration.add_run("内容由AI生成")
